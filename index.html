@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>抽奖页面-我要装修网</title>
+<script>
+	
+	const {ipcRenderer} = require('electron')
+	
+	
+	
+	</script>
+    <!--script type="text/javascript" src="js/cocos2d-js-v3.5.js" charset="UTF-8"></script-->
+    <script >
+	document.ccConfig = {
+    "debugMode"     : 1,
+    "showFPS" : 0,
+    "frameRate"     : 160,
+    "id"            : "gameCanvas",
+    "renderMode"    : 1,
+    "jsList"        : []
+}
+	</script>
+    <script src="js/amrnb.js"></script>
+    <script src="js/amr.js"></script>
+    <script src="js/data.js"></script>
+    
+    <script data-main="js/main" src="js/avalon.js"></script>
+</head>
+<body style="background:url('image/bg.jpg') #232323;">
+    <canvas id="gameCanvas" width="800" height="450"></canvas>
+
+	
+	
+	<!--
+	
+	 --ignore-gpu-blacklist --enable-webgl --disable-web-security
+	  --args --disable-web-security --user-data-dir
+	   --disable-web-security --user-data-dir=D:\工作\微信\2017年会\choujiang
+	-->
+	<script>
+	
+	//const {ipcRenderer} = require('electron')
+	
+	 document.getElementById('gameCanvas').addEventListener('keyup',function(event){
+             var e = event || window.event || arguments.callee.caller.arguments[0];
+             if(e && e.keyCode==27){ // 按 Esc 
+                 ipcRenderer.sendSync('fullscreen', '1');
+				 
+               }
+             
+         }); 
+		 
+		
+	
+	</script>
+</body>
+</html>
